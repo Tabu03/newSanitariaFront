@@ -1,0 +1,28 @@
+.menu-usu{
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+.nav{
+   
+    height: 80px;
+}
+.nav__list{
+    list-style-type: none;
+    display: flex;
+    font-family: PT sansb;
+}
+.nav__item{
+    font-size: 0.8rem;
+    margin: 20px;
+    height: 20px;
+}
+.nav__link{
+    text-decoration: none;
+    color: rgb(122, 122, 122);
+    
+}
+
+.nav__link:hover{
+    text-decoration: underline;
+}

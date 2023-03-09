@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css//bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+
+<body class="container d-flex">
+    <div class="row mt-5 justify-content-md-center">
+        <form id="form" class="row g-3 text justify-content-center" novalidate>
+            <div class="col-md-6">
+                <label for="inputName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="inputName" required>
+                <p id="errorname" class="error"></p>
+            </div>
+            <div class="col-md-6">
+                <label for="inputLastNames" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="inputLastNames" required>
+                <p id="errorlastname" class="error"></p>
+            </div>
+            <div class="col-12">
+                <label for="inputEmail" class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="ejemplo@ejemplo.com" required>
+                <p id="erroremail" class="error"></p>
+            </div>
+            <div class="col-md-7">
+                <label for="inputState" class="form-label">Centro</label>
+                <select id="inputCenter" class="form-select" required>
+                    <option>Centro 1</option>
+                    <option>Centro 2</option>
+                    <option>Centro 3</option>
+                    <option>Centro 4</option>
+                </select>
+                <p id="errorcenter" class="error"></p>
+            </div>
+            <div class="col-md-5">
+                <label for="inputCourse" class="form-label">Curso</label>
+                <input type="text" class="form-control" id="inputCourse" required>
+                <p id="errorcourse" class="error"></p>
+            </div>
+            <div class="col-12">
+                <label for="inputPassword" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="inputPassword" required>
+                <p id="errorpassword" class="error"></p>
+            </div>
+            <div class="col-12">
+                <label for="inputRepeatPassword" class="form-label">Repetir contraseña</label>
+                <input type="password" class="form-control" id="inputRepeatPassword" required>
+                <p id="errorrepeatpassword" class="error"></p>
+            </div>
+            <div class="col-8 d-flex justify-content-center">
+                <button id="btnsub" type="submit" class="btn col-12 btn-primary">Registrarse</button>
+            </div>
+        </form>
+    </div>
+    <div>
+
+    </div>
+
+    <script src="./js/bootstrap.bundle.js"></script>
+    <script src="./js/variables.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/validation.js"></script>
+</body>
+
+</html>
