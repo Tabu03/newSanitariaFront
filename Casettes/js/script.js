@@ -1,5 +1,5 @@
 let casettes = document.getElementById("casettes")
-let organo = document.getElementById("organo")
+let organos = document.getElementById("organos")
 
 const cargarTodos = () => {
     return fetch('http://localhost:3000/v1/casettes', {
@@ -11,7 +11,7 @@ const cargarTodos = () => {
 }
 
 const cargarPorOrgano = () => {
-    return fetch('http://localhost:3000/v1/casettes/organo/'+organo.value, {
+    return fetch('http://localhost:3000/v1/casettes/organo/'+organos.value, {
         method: 'GET',
         headers: {
             'user-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvSWQiOjIsImNyZWF0ZWRBdCI6MTY3ODczMzM0OCwiZXhwaXJlZEF0IjoxNjc4NzYyMTQ4fQ.qLIZzErmILZMtMW-QlgTbp0FaauiqBskJ_ua2fES11E',
@@ -22,7 +22,7 @@ const cargarPorOrgano = () => {
 const imprimirCasettes=(respuesta)=>{
     while (casettes.lastElementChild) {
         casettes.removeChild(casettes.lastElementChild);
-      }
+    }
 
     let fragmento=document.createDocumentFragment()
     respuesta.forEach((casete) => {
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async()=>{
     imprimirCasettes(respuesta)
 })
 
-organo.addEventListener("change",async()=>{
+organos.addEventListener("change",async()=>{
     const respuesta=await cargarPorOrgano()
     imprimirCasettes(respuesta)
 })

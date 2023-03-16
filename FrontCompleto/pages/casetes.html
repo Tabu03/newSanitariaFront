@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/casetes.css">
+
+  <title>Casetes</title>
+</head>
+
+<body class="">
+
+  <header class="barra_org container-fluid">
+
+    <div class="caja_org mt-3 mb-3">
+      <div class="form-floating col-2">
+        <select class="form-select" id="organos" aria-label="Floating label select example">
+          <optgroup label="Sistema Nervioso">
+            <option>Encéfalo</option>
+            <option>Médula Espinal</option>
+            <option>Nervio</option>
+            <option>Ganglio Nervios</option>
+          </optgroup>
+
+          <optgroup label="Tegumento">
+            <option>Piel</option>
+            <option>Uña</option>
+            <option>Pelo</option>
+          </optgroup>
+
+          <optgroup label="Cardiovascular">
+            <option>Corazón</option>
+            <option>Venas</option>
+            <option>Arteria</option>
+          </optgroup>
+
+          <optgroup label="Linfático">
+            <option>Ganglio Linfático</option>
+            <option>Timo</option>
+            <option>Bazo</option>
+          </optgroup>
+
+          <optgroup label="Sistema Digestivo">
+            <option>Lengua</option>
+            <option>Esófago</option>
+            <option>Estómago</option>
+            <option>Intestino Delgado</option>
+            <option>Intestino Grueso</option>
+            <option>Diente</option>
+            <option>Glándula Salivar</option>
+            <option>Páncrea</option>
+            <option>Hígado</option>
+          </optgroup>
+
+          <optgroup label="Aparato Excretor">
+            <option>Riñón</option>
+            <option>Vejiga</option>
+          </optgroup>
+
+          <optgroup label="Respiratorio">
+            <option>Tránquea</option>
+            <option>Bronquios</option>
+            <option>Tejido Respiratorio</option>
+          </optgroup>
+
+          <optgroup label="Endocrino">
+            <option>Tiroides</option>
+            <option>Parótidas</option>
+            <option>Suprarrenales</option>
+            <option>Ovario</option>
+            <option>Testículo</option>
+          </optgroup>
+
+          <optgroup label="Locomotor">
+            <option>Hueso</option>
+            <option>Musculo Esquelético</option>
+          </optgroup>
+
+
+        </select>
+        <label for="floatingSelect">Organos</label>
+      </div>
+
+      <input hidden type="text">
+
+      <div class="form-floating col-2 ">
+        <input type="date" class="caja_fech">
+      </div>
+
+      <div class="col-2">
+        <div class="btn btn-primary btn-lg dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+            </svg>
+        </div>
+        <ul class="dropdown-menu">
+          <li><a href=""></a></li>
+          <li><a href="changePass.html">Cambiar Contraseña</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="container pt-5">
+    <section class="d-flex justify-content-evenly">
+      <div class="container__table col-4 p-2">
+        <div class="title d-flex">
+          <div class="col-10 ps-5">
+            <h2>Cassetes</h2>
+          </div>
+          <button id="nuevoCassette" type="button" class="btn btn-success col-2">Nuevo</button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="row">Fecha</th>
+              <th scope="row">Características</th>
+              <th scope="row">Órgano</th>
+              <th>#</th>
+            </tr>
+          </thead>
+          <tbody id="casettes" class="table-group-divider">
+          </tbody>
+        </table>
+      </div>
+      <div class="cassette col-4" id="cassette">
+        <div class="p-2">
+          <div class="d-flex">
+            <h2 class="text-center cassette__title col-12">Informacion Cassette</h2>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" id="cassette__organo"><span>Órgano: </span></li>
+            <li class="list-group-item" id="cassette__fecha"><span>Fecha: </span></li>
+            <li class="list-group-item" id="cassette__caracteristicas"><span>Características: </span></li>
+            <li class="list-group-item" id="cassette__observaciones"><span>Observaciones: </span></li>
+            <li class="list-group-item" id="cassette__codigoqr"><span>Codigo QR: </span></li>
+          </ul>
+        </div>
+        <div class="d-flex justify-content-evenly m-2">
+          <button type="button" class="btn btn-danger" id="btnborrar" style="width: 8rem;">Borrar</button>
+          <button type="button" class="btn btn-info" id="btnmodificar" style="width: 8rem;">Modificar</button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="pt-5 d-flex col-12">
+      <div class="container__muestra col-12 p-2">
+        <div class="title d-flex">
+          <div class="col-11 ps-5">
+            <h2>Muestras</h2>
+          </div>
+          <button id="nuevaMuestra" type="button" class="btn btn-success col-1">Nuevo</button>
+        </div>
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th scope="row">Fecha</th>
+              <th scope="row">Observaciones</th>
+              <th scope="row">Tinción</th>
+              <th scope="row">Tipo</th>
+              <th scope="row">#</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="../js/casete.js"></script>
+</body>
+
+</html>
