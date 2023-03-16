@@ -88,8 +88,11 @@
 
       <input hidden type="text">
 
-      <div class="form-floating col-2 ">
-        <input type="date" class="caja_fech">
+      <div class="form-floating col-4 ">
+        Desde:
+        <input type="date" class="">
+        Hasta:
+        <input type="date" class="mt-2">
       </div>
 
       <div class="col-2">
@@ -99,7 +102,7 @@
             </svg>
         </div>
         <ul class="dropdown-menu">
-          <li><a href=""></a></li>
+          <li><a href="changeData.html">Cambiar Informacion de Usuario</a></li>
           <li><a href="changePass.html">Cambiar Contraseña</a></li>
         </ul>
       </div>
@@ -115,20 +118,22 @@
           <div class="col-10 ps-5">
             <h2>Cassetes</h2>
           </div>
-          <button id="nuevoCassette" type="button" class="btn btn-success col-2">Nuevo</button>
+          <button id="nuevoCassette" type="button" class="btn btn-success mb-3 col-2" data-bs-toggle="modal" data-bs-target="#NewCassette">Nuevo</button>
         </div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="row">Fecha</th>
-              <th scope="row">Características</th>
-              <th scope="row">Órgano</th>
-              <th>#</th>
-            </tr>
-          </thead>
-          <tbody id="casettes" class="table-group-divider">
-          </tbody>
-        </table>
+        <div class="table__scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="row">Fecha</th>
+                <th scope="row">Características</th>
+                <th scope="row">Órgano</th>
+                <th>#</th>
+              </tr>
+            </thead>
+            <tbody id="casettes" class="table-group-divider">
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="cassette col-4" id="cassette">
         <div class="p-2">
@@ -177,7 +182,26 @@
   </main>
 
 
-
+<!-- Modal -->
+<div class="modal fade" id="NewCassette" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Cassette</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <input id="files" type="file">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button id="nuevoCassette" type="button" class="btn btn-primary">Crear</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
